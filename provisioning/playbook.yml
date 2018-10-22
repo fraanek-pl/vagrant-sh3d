@@ -1,0 +1,11 @@
+---
+# Ansible playbook for a SH3D.
+
+- hosts: sh3d
+  gather_facts: yes
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - sdarwin.vnc
