@@ -9,5 +9,5 @@
 
   roles:
     - common
-    - sh3d
+#    - sh3d
     - sdarwin.vnc

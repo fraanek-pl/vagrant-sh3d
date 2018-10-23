@@ -16,3 +16,4 @@
     name: sh3d
     comment: SH3D
     group: sh3d
+    shell: /bin/bash

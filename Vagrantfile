@@ -21,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   config.vm.hostname = "sh3d"
   config.vm.network :private_network, ip: "192.168.33.22"
+  config.vm.network :forwarded_port, guest: 5901, guest_ip: '127.0.0.1', host: 5901, auto_correct: true
 
   
   # Set the name of the VM. See: http://stackoverflow.com/a/17864388/100134
