@@ -8,4 +8,6 @@
     - vars/main.yml
 
   roles:
+    - common
+    - sh3d
     - sdarwin.vnc

@@ -4,20 +4,24 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "centos/7"
+  config.vm.box = "ubuntu/bionic64"
 
   config.ssh.insert_key = false
   
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox",  SharedFoldersEnableSymlinksCreate: false
+  
   config.vm.provider :virtualbox do |v|
     v.name = "sh3d"
-    v.memory = 1024
+    v.memory = 2048
     v.cpus = 2
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.customize ["modifyvm", :id, "--ioapic", "on"]
+	v.customize ["modifyvm", :id, "--nictype1", "virtio"]
   end
   
   config.vm.hostname = "sh3d"
   config.vm.network :private_network, ip: "192.168.33.22"
+
   
   # Set the name of the VM. See: http://stackoverflow.com/a/17864388/100134
   config.vm.define :sh3d do |sh3d|

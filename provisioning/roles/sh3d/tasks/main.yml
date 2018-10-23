@@ -1,0 +1,8 @@
+---
+- name: Unarchive a file that needs to be downloaded (added in 2.0)
+  unarchive:
+    src: https://kent.dl.sourceforge.net/project/sweethome3d/SweetHome3D/SweetHome3D-6.0/SweetHome3D-6.0-linux-x64.tgz
+    dest: /opt
+    remote_src: yes
+    owner: sh3d
+    group: sh3d
